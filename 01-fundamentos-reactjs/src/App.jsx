@@ -1,6 +1,16 @@
+import { Header } from './components/Header'
+import { Post } from './Post'
+import './styles.css'
 function App() {
   return (
-    <h1>Hello world lafera world cup 2022</h1>
+    <div>
+      <Header />
+      <Post
+        author="lafera adhonnay"
+        content="texto do lafera"
+      />
+
+    </div>
   )
 }
 
