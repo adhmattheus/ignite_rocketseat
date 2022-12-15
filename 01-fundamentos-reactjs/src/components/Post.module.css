@@ -4,7 +4,7 @@
   padding: 2.5rem;
 }
 
-.post + .post {
+.post+.post {
   margin-top: 2rem;
 }
 
@@ -28,13 +28,13 @@
   color: var(--green-300);
 }
 
-.post > header {
+.post>header {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.post > header time {
+.post>header time {
   font-size: 0.875rem;
   color: var(--gray-400);
 }
@@ -43,15 +43,6 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-}
-
-.author img {
-  box-sizing: initial;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 8px;
-  border: 4px solid var(--gray-800);
-  outline: 2px solid var(--green-500);
 }
 
 .authorInfo {
@@ -76,7 +67,7 @@
   border-top: 1px solid var(--gray-600);
 }
 
-.commentForm > strong {
+.commentForm>strong {
   line-height: 1.6;
   color: var(--gray-100);
 }
