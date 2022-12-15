@@ -3,6 +3,7 @@ import { Post } from './components/Post'
 import { Sidebar } from './components/Sidebar'
 import './global.css'
 import styles from './App.module.css'
+import { Comment } from './components/Comment'
 
 
 function App() {
@@ -16,12 +17,14 @@ function App() {
           <Post
             author="Lafera adhonnay"
             content="texto pos"
-          />
+          /> 
           <Post
             author="Lafera adhonnay"
             content="texto pos"
           />
+
         </main>
+
       </div>
 
     </div>
