@@ -5,7 +5,6 @@ import styles from "./Post.module.css";
 import ptBR from 'date-fns/locale/pt-BR';
 import { format, formatDistanceToNow } from "date-fns";
 
-
 export function Post({ author, publishedAt, content }) {
 
 	const [comments, setComments] = useState([
@@ -34,19 +33,23 @@ export function Post({ author, publishedAt, content }) {
 		setNewCommentText(event.target.value);
 	};
 
+	function deleteComment(commentToDelete) {
+		const commentsWithoutDeletedOne = comments.filter(commet => {
+			return comment !== commentToDelete;
+		})
+		setComments(commentsWithoutDeletedOne)
+	}
+
 	return (
 		<article className={styles.post}>
 			<header>
 
 				<div className={styles.author}>
-
 					<Avatar src={author.avatarUrl} />
-
 					<div className={styles.authorInfo}>
 						<strong>{author.name}</strong>
 						<span>{author.role}</span>
 					</div>
-
 				</div>
 
 				<time title={publishedDateFormatted} dateTime={publishedAt.toISOString()}>
@@ -82,7 +85,13 @@ export function Post({ author, publishedAt, content }) {
 
 			<div className={styles.commentList}>
 				{comments.map(comment => {
-					return <Comment key={comment} content={comment} />
+					return (
+						<Comment
+							key={comment}
+							content={comment}
+							onDeleteComment={deleteComment}
+						/>
+					)
 				})}
 			</div>
 		</article>
