@@ -10,7 +10,7 @@ export function Post({ author, publishedAt, content }) {
 
 	const [comments, setComments] = useState([
 		'Post muito bom, ne não ? '
-	])
+	]);
 
 	const [newCommentText, setNewCommentText] = useState('');
 
