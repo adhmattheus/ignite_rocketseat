@@ -1,8 +1,8 @@
-import { Header } from './components/Header'
-import { Post } from './components/Post'
-import { Sidebar } from './components/Sidebar'
-import styles from './App.module.css'
-import './global.css'
+import { Header } from './components/Header';
+import { Post } from './components/Post';
+import { Sidebar } from './components/Sidebar';
+import styles from './App.module.css';
+import './global.css';
 
 const posts = [
   {
@@ -20,7 +20,7 @@ const posts = [
     publishedAt: new Date('2022-12-12 20:00:00'),
   },
   {
-    id: 1,
+    id: 2,
     author: {
       avatarUrl: 'https://github.com/eldoncosta1.png',
       name: 'Eldon Costa',
@@ -32,7 +32,7 @@ const posts = [
       { type: 'link', content: 'jane.design / doctorcare' },
     ],
     publishedAt: new Date('2022-10-20 13:00:00'),
-  },
+  }
 ];
 
 function App() {
@@ -45,18 +45,19 @@ function App() {
         <main>
 
           {posts.map(post => {
-            return (<Post
-              author={post.author}
-              content={post.content}
-              publishedAt={post.publishedAt}
-            />
+            return (
+              <Post
+                key={post.id}
+                author={post.author}
+                content={post.content}
+                publishedAt={post.publishedAt}
+              />
             )
-          })}
+          })};
 
         </main>
-
       </div>
     </div>
-  )
-}
-export default App
+  );
+};
+export default App;
